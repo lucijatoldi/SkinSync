@@ -1,0 +1,386 @@
+/* =================================
+   MAIN.CSS - Svi stilovi na jednom mjestu
+   ================================= */
+
+/* 1. General Reset & Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+h1, h2, h3, h4 {
+    color: #2c3e50;
+    font-weight: 500;
+}
+
+a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* 2. Main Containers */
+.container, .auth-container, .profile-container {
+    margin: 30px auto;
+    background-color: #ffffff;
+    padding: 25px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.container { max-width: 900px; }
+.auth-container { max-width: 400px; text-align: center; }
+.profile-container { max-width: 700px; text-align: center; margin-top: 40px;}
+
+
+/* 3. Header */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e0e0e0;
+    margin-bottom: 30px;
+}
+
+.header-left h1 {
+    font-size: 2.2em;
+    font-weight: 700;
+    color: #2980b9;
+}
+
+.header-left .header-description {
+    font-size: 0.95em;
+    color: #7f8c8d;
+    margin-top: 2px;
+}
+
+.header-right { 
+    display: flex;
+    align-items: center;
+}
+
+.profile-link {
+    font-weight: 500;
+    margin-right: 12px;
+}
+
+.profile-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #bdc3c7;
+}
+
+
+/* 4. Forms */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #34495e;
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"],
+.form-group input[type="email"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.form-group input[type="file"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #bdc3c7; 
+    border-radius: 5px;       
+    font-size: 0.9em;
+    background-color: #f9f9f9; 
+    cursor: pointer;
+    color: transparent;
+}
+
+.form-group input[type="file"]::file-selector-button {
+    margin-right: 15px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    background-color: #e0e6e8;
+    color: #34495e;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.form-group input[type="file"]::file-selector-button:hover {
+    background-color: #d2d7d9;
+}
+
+.form-section {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 6px;
+    border: 1px solid #e7e7e7;
+}
+
+.checkbox-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    background-color: #ecf0f1;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid #d2d7d9;
+}
+
+.checkbox-label input[type="checkbox"] {
+    margin-right: 10px;
+    width: 18px;
+    height: 18px;
+}
+
+
+/* =================================
+   5. Buttons
+   ================================= */
+
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: white;
+    text-decoration: none;
+}
+
+.btn-inline {
+    display: inline-block;
+    min-width: 180px;
+}
+
+.btn-primary { background-color: #2980b9; } 
+.btn-primary:hover { background-color: #2471a3; }
+
+.btn-success { background-color: #27ae60; } 
+.btn-success:hover { background-color: #229954; }
+
+.btn-danger { background-color: #e74c3c; } 
+.btn-danger:hover { background-color: #c0392b; }
+
+.btn-secondary { background-color: #5dade2; } 
+.btn-secondary:hover { background-color: #3498db; }
+
+
+
+
+/* 6. Cards & Specific Page Elements */
+.dijagnoza-item {
+    background-color: #fdfdfd;
+    border: 1px solid #e7e7e7;
+    border-radius: 6px;
+    padding: 20px 25px;
+    margin-bottom: 25px;
+}
+
+.results-header p {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 25px;
+    text-align: center;
+    padding: 10px;
+    background-color: #e9f5fe; 
+    border-left: 4px solid #3498db; 
+    border-radius: 4px;
+}
+
+
+.dijagnoza-item {
+    background-color: #fdfdfd;
+    border: 1px solid #e7e7e7;
+    border-radius: 6px;
+    padding: 20px 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+}
+
+.dijagnoza-item h2.dijagnoza-label {
+    font-size: 1.6em;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ecf0f1;
+}
+
+.dijagnoza-item h3 {
+    font-size: 1.2em;
+    color: #34495e;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.dijagnoza-item ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.dijagnoza-item ul li {
+    background-color: #ecf0f1;
+    padding: 8px 12px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    border-left: 3px solid #3498db; 
+    font-size: 0.95em;
+}
+
+/* Responsive prilagodbe za rezultate */
+@media (max-width: 768px) {
+    .dijagnoza-item {
+        padding: 15px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .dijagnoza-item h2.dijagnoza-label {
+        font-size: 1.4em;
+    }
+    .dijagnoza-item h3 {
+        font-size: 1.1em;
+    }
+}
+
+.profile-picture img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #ecf0f1;
+}
+
+.download-pdf, .logout-form, .back-to-home-link {
+    margin-top: 20px;
+}
+
+.messages-container {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto 20px auto; 
+    width: 100%;
+    max-width: 900px; 
+}
+
+.message {
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    font-weight: 500;
+}
+
+
+.message.success {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    color: #155724;
+}
+
+
+.message.error {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+}
+
+
+.message.info {
+    background-color: #d1ecf1;
+    border-color: #bee5eb;
+    color: #0c5460;
+}
+
+.message.warning {
+    background-color: #fff3cd;
+    border-color: #ffeeba;
+    color: #856404;
+}
+
+/* =================================
+   7. Profile Page Specifics
+   ================================= */
+
+.profile-container form, .profile-container .download-pdf, .profile-container .back-to-home-link {
+    margin-bottom: 20px;
+}
+
+.profile-picture img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #ecf0f1;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.download-pdf p {
+    font-size: 0.95em;
+    color: #7f8c8d;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+}
+
+.back-to-home-link {
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.profile-container form[action*="update_profile"] {
+    text-align: left;
+}
+
+/* Responsive za profil */
+@media (max-width: 600px) {
+    .profile-container h2 { font-size: 1.6em; }
+    .profile-picture img { width: 120px; height: 120px; }
+}
+
+@media (max-width: 480px) {
+    .profile-container .btn {
+        width: 100%;
+        display: block;
+    }
+}

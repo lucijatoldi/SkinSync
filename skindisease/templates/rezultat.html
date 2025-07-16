@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load custom_filters %}
+
+{% block title %}Rezultati dijagnoze - SkinSync{% endblock %}
+
+{% block content %}
+    <div class="container">
+        {% include 'layouts/header.html' %}
+        <main>
+            <div class="results-header">
+                <p>Moguće dijagnoze na temelju odabranih simptoma i dijelova tijela:</p>
+            </div>
+            
+            {% if dijagnoze_info %}
+                {% for item in dijagnoze_info %}
+                    <div class="dijagnoza-item">
+                        <h2 class="dijagnoza-label">{{ item.dijagnoza|razdvoji_rijeci_filter }}</h2>
+                        
+                        <h3>Preporučeni tretmani:</h3>
+                        <ul>
+                            {% for tretman in item.tretmani %}
+                                <li class="tretman-label">{{ tretman|razdvoji_rijeci_filter }}</li>
+                            {% endfor %}
+                        </ul>
+
+                        {% if item.okidaci %}
+                            <h3>Izbjegavajte sljedeće okidače:</h3>
+                            <ul>
+                                {% for okidac in item.okidaci %}
+                                    <li class="okidac-label">{{ okidac|razdvoji_rijeci_filter }}</li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            {% else %}
+                <div class="dijagnoza-item">
+                     <p>Nije pronađena nijedna dijagnoza za odabrane podatke.</p>
+                </div>
+            {% endif %}
+            
+            <a href="{% url 'home' %}" class="btn btn-success" style="display: block; width: fit-content; margin: 30px auto 0;">Početna stranica</a>
+        </main>
+
+    </div>
+{% endblock %}

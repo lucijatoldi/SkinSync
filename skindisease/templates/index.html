@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load custom_filters %} 
+
+{% block title %}Dijagnoza - SkinSync{% endblock %}
+
+{% block content %}
+    <div class="container"> 
+        {% include 'layouts/header.html' %}
+        <main>
+            <form action="{% url 'dijagnoza' %}" method="POST" class="diagnosis-form-container">
+                {% csrf_token %}
+
+                <div class="form-section">
+                    <h3>Simptomi</h3>
+                    <div class="checkbox-grid">
+                        {% for simptom in simptomi %}
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="simptomi" value="{{ simptom }}">
+                                <span class="checkbox-text">{{ simptom|razdvoji_rijeci_filter }}</span>
+                            </label>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Dio Tijela</h3>
+                    <div class="checkbox-grid">
+                        {% for dio in dijelovi_tijela %}
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="dio_tijela" value="{{ dio }}">
+                                <span class="checkbox-text">{{ dio|razdvoji_rijeci_filter }}</span>
+                            </label>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-success">Postavi Dijagnozu</button>
+            </form>
+        </main>
+
+    </div> 
+{% endblock %}

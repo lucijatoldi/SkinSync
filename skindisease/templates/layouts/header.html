@@ -1,0 +1,33 @@
+{% load static %}
+
+<header class="header-container">
+    <div class="header-left">
+        <a href="{% url 'home' %}" class="logo-link">
+            <h1>SkinSync</h1>
+            <p class="header-description">što mi je na koži?</p>
+        </a>
+    </div>
+
+    <div class="header-right">
+        {% if user.is_authenticated %}
+            <a href="{% url 'profile' %}" class="profile-link">{{ user.username }}</a>
+            
+            <a href="{% url 'profile' %}">
+                {% if profile_url %}
+                    <img src="{{ profile_url }}" alt="Profilna slika" class="profile-icon">
+                {% else %}
+                    <img src="{% static 'images/default.png' %}" alt="Profilna slika" class="profile-icon">
+                {% endif %}
+            </a>
+
+        {% else %}
+            
+            <a href="{% url 'login' %}" class="profile-link">Prijava</a>
+            
+            <a href="{% url 'login' %}">
+                <img src="{% static 'images/default.png' %}" alt="Profilna slika" class="profile-icon">
+            </a>
+
+        {% endif %}
+    </div>
+</header>

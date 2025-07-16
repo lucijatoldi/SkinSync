@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Profil - {{ user.username }}{% endblock %}
+
+{% block content %}
+    
+    <div class="profile-container">
+        <main>
+            <h2>Profil korisnika: {{ user.username }}</h2>
+
+            <div class="profile-picture">
+                {% if profile_url %}
+                    <img src="{{ profile_url }}" alt="Profilna slika">
+                {% else %}
+                    <img src="{% static 'images/default.png' %}" alt="Profilna slika">
+                {% endif %}
+            </div>
+
+            <form action="{% url 'update_profile' %}" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="profile-picture">Promijeni profilnu sliku:</label>
+                    <input type="file" id="profile-picture" name="profile-picture" accept="image/png, image/jpeg">
+                </div>
+                <button type="submit" class="btn btn-success btn-inline">Spremi promjene</button>
+            </form>
+            
+            <div class="download-pdf">
+                 <a href="{% if pdf_exists %}{{ pdf_url }}{% else %}#no-pdf{% endif %}" 
+                   target="_blank" 
+                   class="btn btn-primary btn-inline" 
+                   id="pdf-download-btn">Preuzmi PDF dijagnoze</a>
+            </div>
+
+            <form action="{% url 'logout' %}" method="POST" class="logout-form">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger btn-inline">Odjavi se</button>
+            </form>
+
+            <div class="back-to-home-link">
+                <a href="{% url 'home' %}" class="btn btn-secondary btn-inline">Početna stranica</a>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const pdfBtn = document.getElementById('pdf-download-btn');
+            if (pdfBtn) {
+                pdfBtn.addEventListener('click', function(event) {
+                    if (this.getAttribute('href') === '#no-pdf') {
+                        event.preventDefault();
+                        alert('Nije pronađen spremljeni PDF s rezultatima dijagnoze.');
+                    }
+                });
+            }
+        });
+    </script>
+{% endblock %}
