@@ -29,7 +29,11 @@ SECRET_KEY = 'django-insecure-i!!d889nuu1wxihsjc75uo0=94moykryn@c68bmr9b*b-t@s0l
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.onrender.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+
+RAILWAY_HOSTNAME = os.environ.get('RAILWAY_PUBLIC_DOMAIN') 
+if RAILWAY_HOSTNAME:
+    ALLOWED_HOSTS.append(RAILWAY_HOSTNAME)
 
 ALLOWED_IMAGE_EXTENSIONS = {'png', 'jpg', 'jpeg'}
 
