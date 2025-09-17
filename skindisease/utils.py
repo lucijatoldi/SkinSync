@@ -9,16 +9,6 @@ from reportlab.pdfbase.ttfonts import TTFont
 from .ontologija import NS 
 
 
-try:
-    arial_path = 'C:/Windows/Fonts/arial.ttf'
-    arial_bold_path = 'C:/Windows/Fonts/arialbd.ttf'
-    arial_italic_path = 'C:/Windows/Fonts/ariali.ttf'
-    pdfmetrics.registerFont(TTFont('Arial', arial_path))
-    pdfmetrics.registerFont(TTFont('Arial-Bold', arial_bold_path))
-    pdfmetrics.registerFont(TTFont('Arial-Italic', arial_italic_path))
-except:
-    print("Greška: Nisu pronađeni Arial fontovi. PDF se možda neće ispravno generirati.")
-# -----------------------------
 
 def razdvoji_rijeci(value):
     return re.sub(r'([a-z])([A-Z])', r'\1 \2', value)
@@ -74,11 +64,11 @@ def generiraj_pdf(username, dijagnoze_info):
 
     c = canvas.Canvas(pdf_path_on_disk, pagesize=letter)
 
-    c.setFont("Arial-Bold", 18) 
+    c.setFont("Helvetica-Bold", 18) 
     c.drawCentredString(width / 2.0, height - margin, "SkinSync - Rezultati Dijagnoze")
 
     
-    c.setFont("Arial-Bold", 12)
+    c.setFont("Helvetica-Bold", 12)
     c.drawCentredString(width / 2.0, height - margin - 20, f"Za korisnika: {username}")
     
     c.line(margin, height - margin - 35, width - margin, height - margin - 35)
@@ -86,7 +76,7 @@ def generiraj_pdf(username, dijagnoze_info):
     y_position = height - margin - 60
 
     if not dijagnoze_info:
-        c.setFont("Arial-Italic", 12) 
+        c.setFont("Helvetica-Oblique", 12) 
         c.drawString(margin, y_position, "Nije pronađena nijedna dijagnoza za odabrane simptome.")
         c.save()
         return pdf_path_on_disk
@@ -97,16 +87,16 @@ def generiraj_pdf(username, dijagnoze_info):
             y_position = height - margin 
 
 
-        c.setFont("Arial-Bold", 14)
+        c.setFont("Helvetica-Bold", 14)
         dijagnoza_tekst = razdvoji_rijeci(item['dijagnoza'])
         c.drawString(margin, y_position, dijagnoza_tekst)
         y_position -= 25 
 
         
-        c.setFont("Arial-Bold", 11)
+        c.setFont("Helvetica-Bold", 11)
         c.drawString(margin, y_position, "Preporučeni tretmani:")
         y_position -= 15
-        c.setFont("Arial", 10)
+        c.setFont("Helvetica", 10)
         tretmani_lista = [razdvoji_rijeci(t) for t in item.get('tretmani', [])]
         for tretman in tretmani_lista:
             c.drawString(margin + 15, y_position, f"- {tretman}")
@@ -116,10 +106,10 @@ def generiraj_pdf(username, dijagnoze_info):
         okidaci_lista = [razdvoji_rijeci(o) for o in item.get('okidaci', [])]
         if okidaci_lista:
             y_position -= 10 
-            c.setFont("Arial-Bold", 11)
+            c.setFont("Helvetica-Bold", 11)
             c.drawString(margin, y_position, "Izbjegavajte sljedeće okidače:")
             y_position -= 15
-            c.setFont("Arial", 10)
+            c.setFont("Helvetica", 10)
             for okidac in okidaci_lista:
                 c.drawString(margin + 15, y_position, f"- {okidac}")
                 y_position -= 14
