@@ -31,6 +31,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
+CSRF_TRUSTED_ORIGINS = ['https://skinsync-production.up.railway.app']
+
 RAILWAY_HOSTNAME = os.environ.get('RAILWAY_PUBLIC_DOMAIN') 
 if RAILWAY_HOSTNAME:
     ALLOWED_HOSTS.append(RAILWAY_HOSTNAME)
