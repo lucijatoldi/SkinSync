@@ -77,7 +77,7 @@ def generiraj_pdf(username, dijagnoze_info):
 
     if not dijagnoze_info:
         c.setFont("Helvetica-Oblique", 12) 
-        c.drawString(margin, y_position, "Nije pronađena nijedna dijagnoza za odabrane simptome.")
+        c.drawString(margin, y_position, "Nije pronadena nijedna dijagnoza za odabrane simptome.")
         c.save()
         return pdf_path_on_disk
 
@@ -94,7 +94,7 @@ def generiraj_pdf(username, dijagnoze_info):
 
         
         c.setFont("Helvetica-Bold", 11)
-        c.drawString(margin, y_position, "Preporučeni tretmani:")
+        c.drawString(margin, y_position, "Preporuceni tretmani:")
         y_position -= 15
         c.setFont("Helvetica", 10)
         tretmani_lista = [razdvoji_rijeci(t) for t in item.get('tretmani', [])]
@@ -107,7 +107,7 @@ def generiraj_pdf(username, dijagnoze_info):
         if okidaci_lista:
             y_position -= 10 
             c.setFont("Helvetica-Bold", 11)
-            c.drawString(margin, y_position, "Izbjegavajte sljedeće okidače:")
+            c.drawString(margin, y_position, "Izbjegavajte sljedece okidace:")
             y_position -= 15
             c.setFont("Helvetica", 10)
             for okidac in okidaci_lista:
