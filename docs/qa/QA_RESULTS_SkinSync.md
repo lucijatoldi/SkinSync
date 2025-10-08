@@ -5,16 +5,16 @@
 - Status: no network errors (200 OK requests), no Console errors (Incognito), mobile layout stable. A few UX/Validation improvements have been opened as issues.
 
 ## Evidence (screenshots)
-- Network: [SS-2025-10-08-network-clean.png](./qa/evidence/SS-2025-10-08-network-clean.png)
-- Landing: [SS-2025-10-08-meta-landing.png](./qa/evidence/SS-2025-10-08-meta-landing.png)
-- Registration (valid): [SS-2025-10-08-TC001-registration-valid.png](./qa/evidence/SS-2025-10-08-TC001-registration-valid.png)
-- Registration (existing/invalid): [SS-2025-10-08-TC002-registration-invalid.png](./qa/evidence/SS-2025-10-08-TC002-registration-invalid.png)
-- Login (valid): [SS-2025-10-08-TC003-login-valid.png](./qa/evidence/SS-2025-10-08-TC003-login-valid.png)
-- Symptoms (form): [SS-2025-10-08-TC005-symptoms-form.png](./qa/evidence/SS-2025-10-08-TC005-symptoms-form.png)
-- Results: [SS-2025-10-08-TC007-results-view.png](./qa/evidence/SS-2025-10-08-TC007-results-view.png)
-- PDF (generated via Profile after sign‑in): [SS-2025-10-08-TC008-pdf-generated.png](./qa/evidence/SS-2025-10-08-TC008-pdf-generated.png)
-- Mobile (iPhone 12): [SS-2025-10-08-TC010-mobile-view.png](./qa/evidence/SS-2025-10-08-TC010-mobile-view.png)
-- Console: [SS-2025-10-08-console-clean.png](./qa/evidence/SS-2025-10-08-console-clean.png)
+- Network: [SS-2025-10-08-network-clean.png](../../qa/evidence/SS-2025-10-08-network-clean.png)
+- Landing: [SS-2025-10-08-meta-landing.png](../../qa/evidence/SS-2025-10-08-meta-landing.png)
+- Registration (valid): [SS-2025-10-08-TC001-registration-valid.png](../../qa/evidence/SS-2025-10-08-TC001-registration-valid.png)
+- Registration (existing/invalid): [SS-2025-10-08-TC002-registration-invalid.png](../../qa/evidence/SS-2025-10-08-TC002-registration-invalid.png)
+- Login (valid): [SS-2025-10-08-TC003-login-valid.png](../../qa/evidence/SS-2025-10-08-TC003-login-valid.png)
+- Symptoms (form): [SS-2025-10-08-TC005-symptoms-form.png](../../qa/evidence/SS-2025-10-08-TC005-symptoms-form.png)
+- Results: [SS-2025-10-08-TC007-results-view.png](../../qa/evidence/SS-2025-10-08-TC007-results-view.png)
+- PDF (generated via Profile after sign‑in): [SS-2025-10-08-TC008-pdf-generated.png](../../qa/evidence/SS-2025-10-08-TC008-pdf-generated.png)
+- Mobile (iPhone 12): [SS-2025-10-08-TC010-mobile-view.png](../../qa/evidence/SS-2025-10-08-TC010-mobile-view.png)
+- Console: [SS-2025-10-08-console-clean.png](../../qa/evidence/SS-2025-10-08-console-clean.png)
 
 ## Observations (concise)
 - Network/Console:
