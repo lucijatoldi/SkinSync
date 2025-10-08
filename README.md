@@ -10,6 +10,7 @@ You can access and test the live version of this application, deployed on Railwa
 
 **https://skinsync-production.up.railway.app**
 
+
 ## ✨ Key Features
 
 *   **Intelligent Diagnostics:** Dynamically constructs SPARQL queries to search the knowledge graph based on user input.
@@ -18,6 +19,7 @@ You can access and test the live version of this application, deployed on Railwa
 *   **PDF Report Generation:** Logged-in users can generate and download a personalized PDF with their diagnosis results.
 *   **Cloud Deployed:** The application has been successfully deployed to the Railway cloud platform, including a database migration from SQLite to PostgreSQL.
 *   **Automated Testing:** Includes unit and integration tests using Django's test framework to ensure code quality.
+
 
 ## 🛠️ Tech Stack
 
@@ -28,6 +30,15 @@ You can access and test the live version of this application, deployed on Railwa
 *   **Deployment:** Railway
 *   **Testing:** Django Test Framework
 *   **Frontend:** HTML, CSS, JavaScript
+
+## QA (Summary)
+
+This repository includes a short QA package focused on manual testing:
+- Test plan: [QA_TEST_PLAN_SkinSync.md](./docs/qa/QA_TEST_PLAN_SkinSync.md)
+- Test cases: [TEST_CASES_SkinSync.md](./docs/qa/TEST_CASES_SkinSync.md)
+- Results and evidence (screenshots): [QA_RESULTS_SkinSync.md](./docs/qa/QA_RESULTS_SkinSync.md), [qa/evidence](./docs/qa/evidence/)
+
+
 
 ## 🚀 Getting Started
 
