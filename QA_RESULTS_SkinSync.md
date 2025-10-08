@@ -14,7 +14,7 @@
 - Rezultati: [SS-2025-10-08-TC007-results-view.png](./qa/evidence/SS-2025-10-08-TC007-results-view.png)
 - PDF (generiran nakon profila): [SS-2025-10-08-TC008-pdf-generated.png](./qa/evidence/SS-2025-10-08-TC008-pdf-generated.png)
 - Mobile (iPhone 12): [SS-2025-10-08-TC010-mobile-view.png](./qa/evidence/SS-2025-10-08-TC010-mobile-view.png)
-- Console: (ako dodaš) [SS-2025-10-08-console-clean.png](./qa/evidence/SS-2025-10-08-console-clean.png)
+- Console: [SS-2025-10-08-console-clean.png](./qa/evidence/SS-2025-10-08-console-clean.png)
 
 ## Opažanja (kratko)
 - Network/Console:
