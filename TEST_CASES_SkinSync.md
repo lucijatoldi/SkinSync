@@ -1,14 +1,18 @@
-# Test Cases — SkinSync (osnovni)
+# Test Cases — SkinSync (core)
 
-| ID     | Naziv                                 | Preduvjeti             | Koraci                                                                 | Očekivano |
-|--------|---------------------------------------|------------------------|-------------------------------------------------------------------------|-----------|
-| TC-001 | Registracija (valjano)                | Aplikacija dostupna    | Otvori Registraciju → ispuni valjano → Submit                          | Račun kreiran, preusmjeravanje/poruka |
-| TC-002 | Registracija (slaba/prazna lozinka)   | —                      | Otvori Registraciju → unesi slabo/prazno → Submit                      | Jasna poruka o grešci, bez rušenja |
-| TC-003 | Prijava (točni podaci)                | Račun postoji          | Otvori Prijavu → unesi točno → Submit                                  | Uspješna prijava |
-| TC-004 | Prijava (pogrešna lozinka)            | Račun postoji          | Otvori Prijavu → unesi pogrešno → Submit                               | Poruka o neuspjeloj prijavi |
-| TC-005 | Simptomi (minimalni odabir)           | Prijavljen korisnik    | Otvori formu → odaberi minimalno → Submit                              | Razumni rezultat ili jasna poruka |
-| TC-006 | Simptomi (bez odabira)                | Prijavljen korisnik    | Otvori formu → ne odaberi ništa → Submit                               | Validacijska poruka |
-| TC-007 | Rezultati (sadržaj)                   | Postoje rezultati      | Nakon Submit → pregled liste                                           | Nazivi, tretmani i okidači (ako predviđeno) |
-| TC-008 | PDF (prijavljen)                      | Prijavljen, ima rezultate | Klik na “Generate PDF”                                               | PDF se generira/preuzima |
-| TC-009 | PDF (odjavljen)                       | Odjavljen              | Pokušaj otvoriti/generirati PDF                                        | Traži prijavu ili prikladna poruka |
-| TC-010 | Mobile prikaz (osnovno)               | —                      | DevTools → iPhone 12 → ključne stranice                                | UI čitljiv, bez lomljenja lay outa |
+| ID     | Title                                  | Preconditions          | Steps                                                                | Expected |
+|--------|----------------------------------------|------------------------|----------------------------------------------------------------------|---------|
+| TC-001 | Registration (valid)                   | App is available       | Open Registration → fill valid fields → Submit                       | Account created; success/redirect |
+| TC-002 | Registration (existing username)       | Username already taken | Open Registration → use existing username → Submit                   | Clear message “Username already taken” |
+| TC-003 | Login (valid credentials)              | Account exists         | Open Login → enter correct credentials → Submit                      | Successful login |
+| TC-004 | Login (wrong password)                 | Account exists         | Open Login → enter wrong password → Submit                           | Error message; no login |
+| TC-005 | Symptoms (minimal selection)           | Signed‑in user         | Open form → select minimal valid combo → Submit                      | Reasonable results or clear “no matches” |
+| TC-006 | Symptoms (no selection)                | Signed‑in user         | Open form → select nothing → Submit                                  | Validation message shown (tracked in Issue #2) |
+| TC-007 | Results (content)                      | Results exist          | After Submit → review list                                           | Disease names, suggested treatments and triggers (if defined) |
+| TC-008 | PDF (signed‑in flow)                   | Signed‑in, has results | Submit form → go to Profile                                          | PDF file is present/available for download |
+| TC-009 | PDF (signed‑out)                       | Signed‑out             | Try to access Profile or PDF                                         | Redirect to login or message; PDF not offered on Results |
+| TC-010 | Mobile view (basic)                    | —                      | DevTools → iPhone 12 → key pages                                     | Readable UI, no layout break or horizontal scroll |
+
+Notes:
+- TC‑006 reflects a desired validation; current behavior may lack a message (see Issue #2).
+- TC‑009 matches current logic (PDF via Profile for signed‑in users); Issue #1 proposes adding a PDF button to Results for signed‑in users.
