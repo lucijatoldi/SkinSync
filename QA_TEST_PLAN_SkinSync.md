@@ -1,30 +1,30 @@
 # QA Test Plan — SkinSync
 
-## Sažetak
-Cilj: provjeriti osnovnu ispravnost ključnih tokova (registracija/prijava, unos simptoma, rezultati, PDF). Pristup: ručno testiranje (happy path + osnovni negativni slučajevi) i kratke UX napomene.
+## Summary
+Goal: verify the basic correctness of key flows (registration/login, symptoms → results, PDF). Approach: manual testing (happy path + basic negative cases) plus brief UX notes.
 
-## Opseg
-U opsegu:
-- Registracija i prijava
-- Forma sa simptomima i prikaz rezultata
-- Generiranje PDF-a (prijavljeni korisnik)
-- Osnovne validacije i poruke o greškama
+## Scope
+In scope:
+- Registration and login
+- Symptoms form and results display
+- PDF generation (signed‑in user)
+- Basic validations and error messages
 
-Izvan opsega (u ovoj iteraciji):
-- Automatizacija, performance, sigurnosni i mobilni nativni testovi
+Out of scope (this round):
+- Test automation, performance, security and native mobile testing
 
-## Okruženja
+## Environments
 - Live: https://skinsync-production.up.railway.app
 
-## Pristup testiranju
-- Exploratory prolaz kako bi se uočile brze nepravilnosti
-- Kratki testni slučajevi s jasnim, ponovljivim koracima
-- Dokazi (screenshotovi) u mapi `qa/evidence`
+## Test approach
+- Exploratory pass to catch obvious issues
+- Short test cases with clear, repeatable steps
+- Evidence (screenshots) stored under `qa/evidence`
 
-## Test podaci (primjeri)
-- Korisnik: test.user@example.com / Lozinka: Test12345!
-- Simptomi: kombinacije koje očekivano daju 0, 1 i više rezultata
+## Test data (examples)
+- User: test.user@example.com / Password: Test12345!
+- Symptoms/body parts: combinations expected to yield 0, 1 or multiple results
 
-## Kriteriji završetka
-- Izvršeni planirani test slučajevi
-- Otvoreni issue-i za uočene probleme (koraci, očekivano/stvarno, dokaz)
+## Exit criteria
+- Planned test cases executed
+- Issues opened for observed problems (steps, expected/actual, evidence)
