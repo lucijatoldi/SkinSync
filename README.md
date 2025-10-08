@@ -29,6 +29,15 @@ You can access and test the live version of this application, deployed on Railwa
 *   **Testing:** Django Test Framework
 *   **Frontend:** HTML, CSS, JavaScript
 
+## QA (Summary)
+
+This repository includes a short QA package focused on manual testing:
+- Test plan: [QA_TEST_PLAN_SkinSync.md](./QA_TEST_PLAN_SkinSync.md)
+- Test cases: [TEST_CASES_SkinSync.md](./TEST_CASES_SkinSync.md)
+- Results and evidence (screenshots): [QA_RESULTS_SkinSync.md](./QA_RESULTS_SkinSync.md), [qa/evidence](./qa/evidence/)
+
+
+
 ## 🚀 Getting Started
 
 To get a local copy up and running, follow these simple steps.
